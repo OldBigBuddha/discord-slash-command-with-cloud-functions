@@ -7,17 +7,22 @@
     "@tsconfig/node16-strictest": "1.0.4",
     "@types/node": "18.11.13",
     "npm-check-updates": "16.5.6",
+    "npm-run-all": "4.1.5",
+    "rimraf": "3.0.2",
     "ts-node": "10.9.1",
     "tsc-alias": "1.8.2",
     "typescript": "4.9.4"
   },
   "scripts": {
+    "clean": "rimraf dist",
     "update:check": "ncu",
     "update:apply": "ncu -u",
     "build": "tsc && tsc-alias",
+    "prebuild": "npm run clean",
     "start": "functions-framework --target=interactions",
     "prestart": "npm run build",
-    "gcp-build": "npm run build"
+    "deploy": "gcloud functions deploy interactions --source=./dist --region=asia-northeast2 --entry-point=interactions --allow-unauthenticated --runtime nodejs16 --trigger-http",
+    "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
