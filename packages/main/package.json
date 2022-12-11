@@ -1,0 +1,30 @@
+{
+  "name": "@scrapbot/main",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "@tsconfig/node16-strictest": "1.0.4",
+    "@types/node": "18.11.13",
+    "npm-check-updates": "16.5.6",
+    "ts-node": "10.9.1",
+    "tsc-alias": "1.8.2",
+    "typescript": "4.9.4"
+  },
+  "scripts": {
+    "start": "ts-node ./src/main.ts",
+    "update:check": "ncu",
+    "update:apply": "ncu -u"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OldBigBuddha/discord-slash-command-with-cloud-functions.git"
+  },
+  "keywords": [],
+  "author": "OldBigBuddha <contact@oldbigbuddha.net> (http://oldbigbuddha.dev/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OldBigBuddha/discord-slash-command-with-cloud-functions/issues"
+  },
+  "homepage": "https://github.com/OldBigBuddha/discord-slash-command-with-cloud-functions#readme"
+}
