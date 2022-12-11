@@ -3,13 +3,18 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
+    "outDir": "dist",
+    "sourceMap": true,
     "paths": {
       "*": [
         "src/*"
-      ]
+      ],
     },
     "types": [
       "node"
     ]
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
 }

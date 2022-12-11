@@ -2,7 +2,7 @@
   "name": "@scrapbot/function",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "devDependencies": {
     "@tsconfig/node16-strictest": "1.0.4",
     "@types/node": "18.11.13",
@@ -12,9 +12,12 @@
     "typescript": "4.9.4"
   },
   "scripts": {
-    "start": "ts-node ./src/main.ts",
     "update:check": "ncu",
-    "update:apply": "ncu -u"
+    "update:apply": "ncu -u",
+    "build": "tsc && tsc-alias",
+    "start": "functions-framework --target=interactions",
+    "prestart": "npm run build",
+    "gcp-build": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,5 +29,8 @@
   "bugs": {
     "url": "https://github.com/OldBigBuddha/discord-slash-command-with-cloud-functions/issues"
   },
-  "homepage": "https://github.com/OldBigBuddha/discord-slash-command-with-cloud-functions#readme"
+  "homepage": "https://github.com/OldBigBuddha/discord-slash-command-with-cloud-functions#readme",
+  "dependencies": {
+    "@google-cloud/functions-framework": "3.1.2"
+  }
 }
